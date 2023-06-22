@@ -32,7 +32,7 @@ async   function getData(){
 
     for(let key  in data){
       
-        data[key].id=data
+        data[key].id=key
        products.push(data[key])
     }
     let tr=''
@@ -42,9 +42,19 @@ async   function getData(){
             <th scope="row">${index++}</th>
             <td>${item.title}</td>
             <td><img src="${item.image}"></td>
-            <td>@${item.price}</td>
+            <td>${item.price}$</td>
+            <td><button onclick="Delete('${item.id}')">Delete</button></td>
+
           </tr>
         `
-        let tbody=document.querySelector('tbody').innerHTML=tr;
+        document.querySelector('tbody').innerHTML=tr;
     })
 }   
+
+async function Delete(id) {
+    let response = await fetch(`https://loginjs-ec3df-default-rtdb.firebaseio.com/products/${id}.json`, {
+      method: 'DELETE'
+    });
+   
+  }
+  
