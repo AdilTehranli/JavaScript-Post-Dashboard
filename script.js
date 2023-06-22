@@ -1,8 +1,7 @@
 let form =document.querySelector('form');
-form.addEventListener('submit', login)
 
 
-
+form.addEventListener('submit', register)
 async function register(e){
     e.preventDefault(e);
     
@@ -27,13 +26,14 @@ async function register(e){
         });
         
         let result=await response.json()
-        console.log(result);
-        
+      
     }catch(err){
         console.log(err);
     }
+    
+}
 
-    }
+
 
 async function login(e){
 
@@ -61,7 +61,7 @@ async function login(e){
         
         let result=await response.json()
         
-        if(result.idToken){
+        if(result){
             location.replace(`http://127.0.0.1:5500/Dashboard.html`)
         }
         
