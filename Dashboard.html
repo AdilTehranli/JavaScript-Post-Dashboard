@@ -9,7 +9,7 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
         .container {
-            max-width: 500px;
+            
             margin: 0 auto;
             padding: 20px;
         }
@@ -66,14 +66,22 @@
             width: 100px;
             height: auto;
         }
+        button{
+            color: white;
+            border-radius: 6px;
+            background-color: red;
+            border: none;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <form id="product-form">
-            <div class="form-group">
-                <label for="title">Title:</label>
+        <div class="d-flex">
+
+            <form id="product-form">
+                <div class="form-group">
+                    <label for="title">Title:</label>
                 <input type="text" id="title" required>
             </div>
             <div class="form-group">
@@ -88,7 +96,7 @@
                 <button type="submit">Submit</button>
             </div>
         </form>
-
+        
         <table id="product-table">
             <thead>
                 <tr>
@@ -97,14 +105,17 @@
                     <th scope="col">Image</th>
                     <th scope="col">Price</th>
                     <th scope="col">Delete</th>
+                    <th scope="col">Update</th>
+
                 </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
     </div>
+    </div>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="Dashboard.js"></script>
 </body>
 
